@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    body {margin: 0;}
+
+    canvas {margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 300px;}
+
+    #menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        padding: 20px;
+        background: white;
+        border-left: 1px solid #999;
+    }
+
+    #lines  {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+    }
+
+    #lines li {
+        width: 20px;
+        height: 20px;
+        margin: 20px;
+        cursor: pointer;
+        transition: all .4s ease;
+    }
+
+    #lines li.selected {
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+    }
+
+    .red {background: red}
+    .blue {background: blue}
+    .yellow {background: yellow}
+</style>
+<body>
+    <canvas id="plot" width="800" height="600"></canvas>
+    <div id="menu">
+        <h1><span id="money"></span> $</h1>
+
+        <ul id="lines">
+        </ul>
+
+        <div>Length: <span id="length"></span></div>
+        <div>Stations: <span id="stationCnt"></span></div>
+        <div id="trains">
+            <div>Trains: <span id="trainCnt"></span></div>
+            <button id="addTrainBtn" type="button">Add</button>
+            <button id="removeTrainBtn" type="button">Remove</button>
+        </div>
+    </div>
+</body>
+
+<!--<script src="data/levels.js"></script>-->
+<!--<script src="js/game.js"></script>-->
+
+<script type="module">
+	import GameManager from './js/GameManager.js'
+	GameManager.initialize()
+</script>
+
+</html>
